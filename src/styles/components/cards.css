@@ -1,0 +1,69 @@
+.card { background: var(--paper); border-radius: var(--radius-md); box-shadow: var(--shadow); }
+
+.grid { display: grid; gap: 16px; }
+.grid--markets { grid-template-columns: 1fr; }
+.grid--products { grid-template-columns: repeat(2, 1fr); }
+.grid--orders { grid-template-columns: 1fr; }
+.grid--stats { grid-template-columns: 1fr; }
+@media (min-width: 560px) { .grid--stats { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 720px) {
+  .grid--markets { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .grid--products { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .grid--orders { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1000px) {
+  .grid--markets { grid-template-columns: repeat(3, 1fr); }
+  .grid--products { grid-template-columns: repeat(4, 1fr); }
+  .grid--stats { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 380px) { .grid--products { grid-template-columns: 1fr; } }
+
+.illustration { overflow: hidden; border-radius: var(--radius-md); aspect-ratio: 4 / 3; width: 100%; }
+.illustration svg { display: block; width: 100%; height: 100%; }
+
+/* Mercado */
+.market-card { overflow: hidden; display: flex; flex-direction: column; }
+.market-card__media { border-radius: 0; aspect-ratio: 16 / 9; }
+.market-card__body { display: grid; gap: 8px; padding: 18px; align-content: start; flex: 1; }
+.market-card__line { display: flex; align-items: center; gap: 8px; }
+.market-card__stalls { display: grid; gap: 2px; border-top: 1px solid var(--line); padding-top: 10px; margin-top: 4px; }
+.market-card__stalls a { display: inline-block; padding: 6px 0; text-decoration: none; font-weight: 600; }
+.market-card__stalls a:hover { text-decoration: underline; }
+.market-card__cta { display: inline-flex; align-items: center; gap: 4px; margin-top: auto; min-height: 44px; font-weight: 800; text-decoration: none; }
+
+/* Producto */
+.product-card { overflow: hidden; display: flex; flex-direction: column; }
+.product-card__media { display: block; }
+.product-card__media .illustration { border-radius: 0; }
+.product-card__body { display: grid; gap: 6px; padding: 12px; align-content: start; flex: 1; }
+.product-card__body h3 a { text-decoration: none; color: var(--ink); }
+.product-card__body h3 a:hover { text-decoration: underline; }
+.product-card__body .btn { margin-top: auto; }
+
+.price { display: grid; gap: 0; }
+.price__amount { font-size: 1.25rem; font-weight: 800; color: var(--green-dark); font-variant-numeric: tabular-nums; }
+.price__unit { font-size: 0.85rem; color: var(--ink-soft); }
+.price--large .price__amount { font-size: 2rem; }
+
+/* Pedidos */
+.order-card { padding: 18px; display: grid; gap: 12px; }
+.order-card__top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+.order-card__number { font-size: 0.85rem; font-weight: 700; color: var(--ink-soft); }
+.steps-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+.steps-bar li { height: 6px; border-radius: 3px; background: var(--line); }
+.steps-bar li.is-done { background: var(--green); }
+.order-card__meta { display: grid; grid-template-columns: repeat(3, auto); justify-content: space-between; gap: 12px; margin: 0; padding-top: 12px; border-top: 1px solid var(--line); }
+.order-card__meta dt { display: flex; align-items: center; gap: 4px; font-size: 0.8rem; color: var(--ink-soft); }
+.order-card__meta dd { margin: 2px 0 0; font-size: 0.925rem; }
+
+.status-summary { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 24px; }
+.status-summary__item { display: grid; gap: 6px; padding: 14px 16px; justify-items: start; }
+.status-summary__count { font-size: 1.8rem; font-weight: 800; line-height: 1; }
+@media (min-width: 720px) { .status-summary { grid-template-columns: repeat(4, 1fr); } }
+
+/* Cantidad */
+.qty { display: inline-flex; align-items: center; border: 2px solid var(--line); border-radius: 999px; background: var(--paper); }
+.qty button { display: grid; place-items: center; width: 46px; height: 46px; border: 0; background: transparent; color: var(--green-dark); cursor: pointer; border-radius: 50%; }
+.qty button:disabled { color: #9d9880; cursor: not-allowed; }
+.qty output { min-width: 32px; text-align: center; font-weight: 800; }
+.qty--sm button { width: 40px; height: 40px; }
