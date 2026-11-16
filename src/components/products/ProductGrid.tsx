@@ -1,5 +1,5 @@
 import type { Product } from "@/types/product";
-import { getStallBySlug } from "@/data/markets";
+import { getStallBySlug } from "@/lib/data/markets";
 import { ProductCard } from "./ProductCard";
 
 interface ProductGridProps {

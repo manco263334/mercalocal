@@ -3,7 +3,7 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { Input } from "@/components/ui/Input";
 import { FilterChips } from "@/components/ui/FilterChips";
 import { MarketGrid } from "@/components/markets/MarketGrid";
-import { markets } from "@/data/markets";
+import { markets } from "@/lib/data/markets";
 
 export const metadata: Metadata = { title: "Mercados" };
 

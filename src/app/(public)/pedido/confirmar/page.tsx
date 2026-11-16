@@ -3,9 +3,9 @@ import { PageHeader } from "@/components/ui/PageHeader";
 import { Input, Select } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
-import { cartLines, cartStallSlug, cartTotal, pickupSlots } from "@/data/orders";
-import { getProductById } from "@/data/products";
-import { getStallBySlug, getMarketById } from "@/data/markets";
+import { cartLines, cartStallSlug, cartTotal, pickupSlots } from "@/lib/data/orders";
+import { getProductById } from "@/lib/data/products";
+import { getStallBySlug, getMarketById } from "@/lib/data/markets";
 import { formatPrice } from "@/lib/format";
 
 export const metadata: Metadata = { title: "Confirmar pedido" };

@@ -9,9 +9,9 @@ export interface Market {
   zone: string;
   address: string;
   stallCount: number;
-  categories: ProductCategory[];
+  categories: Array<ProductCategory>;
   hours: string;
-  description: string;
+  description?: string;
 }
 
 export interface Stall {
@@ -21,7 +21,7 @@ export interface Stall {
   name: string;
   category: ProductCategory;
   owner: string;
-  description: string;
+  description?: string;
   hours: string;
   openNow: boolean;
 }

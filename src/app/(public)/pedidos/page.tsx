@@ -4,7 +4,7 @@ import { OrderCard } from "@/components/orders/OrderCard";
 import { OrderStatusBadge } from "@/components/orders/OrderStatusBadge";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { orders } from "@/data/orders";
+import { orders } from "@/lib/data/orders";
 import type { OrderStatus } from "@/types/order";
 
 export const metadata: Metadata = { title: "Mis pedidos" };

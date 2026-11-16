@@ -12,7 +12,7 @@ export interface Order {
   dateLabel: string;
   pickupSlot: string;
   status: OrderStatus;
-  items: OrderItem[];
+  items: Array<OrderItem>;
   total: number;
 }
 

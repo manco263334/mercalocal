@@ -1,5 +1,5 @@
 import type { Market } from "@/types/market";
-import { getStallsByMarket } from "@/data/markets";
+import { getStallsByMarket } from "@/lib/data/markets";
 import { MarketCard } from "./MarketCard";
 
 export function MarketGrid({ markets }: { markets: Market[] }) {

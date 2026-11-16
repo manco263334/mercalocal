@@ -7,8 +7,8 @@ import { Badge } from "@/components/ui/Badge";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { MarketGrid } from "@/components/markets/MarketGrid";
 import { ProductGrid } from "@/components/products/ProductGrid";
-import { markets } from "@/data/markets";
-import { popularProductIds, getProductById } from "@/data/products";
+import { markets } from "@/lib/data/markets";
+import { popularProductIds, getProductById } from "@/lib/data/products";
 import type { IconName } from "@/types/navigation";
 import type { Product } from "@/types/product";
 

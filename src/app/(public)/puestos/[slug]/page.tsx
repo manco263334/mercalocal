@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { stalls, getStallBySlug, getMarketById } from "@/data/markets";
-import { getProductsByStall } from "@/data/products";
+import { stalls, getStallBySlug, getMarketById } from "@/lib/data/markets";
+import { getProductsByStall } from "@/lib/data/products";
 import { Illustration } from "@/components/ui/Illustration";
 import { Badge } from "@/components/ui/Badge";
 import { Icon } from "@/components/ui/Icon";

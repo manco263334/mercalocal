@@ -5,9 +5,9 @@ import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { SectionTitle } from "@/components/ui/SectionTitle";
-import { cartLines, cartStallSlug, cartTotal } from "@/data/orders";
-import { getProductById } from "@/data/products";
-import { getStallBySlug } from "@/data/markets";
+import { cartLines, cartStallSlug, cartTotal } from "@/lib/data/orders";
+import { getProductById } from "@/lib/data/products";
+import { getStallBySlug } from "@/lib/data/markets";
 import { formatPrice, unitLabels } from "@/lib/format";
 
 export const metadata: Metadata = { title: "Carrito" };

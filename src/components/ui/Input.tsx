@@ -1,3 +1,5 @@
+"use client";
+
 import type { ReactNode } from "react";
 import type { IconName } from "@/types/navigation";
 import { Icon } from "./Icon";
@@ -14,9 +16,10 @@ interface InputProps extends FieldProps {
   placeholder?: string;
   defaultValue?: string;
   icon?: IconName;
+  onChange?: (e: any) => any;
 }
 
-export function Input({ id, label, hint, hideLabel, type = "text", placeholder, defaultValue, icon }: InputProps) {
+export function Input({ id, label, hint, hideLabel, type = "text", placeholder, defaultValue, icon, onChange }: InputProps) {
   return (
     <div className="field">
       <label htmlFor={id} className={hideLabel ? "sr-only" : "field__label"}>
@@ -24,7 +27,14 @@ export function Input({ id, label, hint, hideLabel, type = "text", placeholder, 
       </label>
       <div className={`field__control${icon ? " field__control--icon" : ""}`}>
         {icon && <Icon name={icon} size={20} />}
-        <input id={id} name={id} type={type} placeholder={placeholder} defaultValue={defaultValue} />
+        <input 
+          id={id} 
+          name={id} 
+          type={type} 
+          placeholder={placeholder} 
+          defaultValue={defaultValue}
+          onChange={onChange}
+        />
       </div>
       {hint && <p className="field__hint">{hint}</p>}
     </div>

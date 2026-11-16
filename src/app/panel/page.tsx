@@ -11,9 +11,9 @@ import { Icon } from "@/components/ui/Icon";
 import { Illustration } from "@/components/ui/Illustration";
 import { OrderStatusBadge } from "@/components/orders/OrderStatusBadge";
 import { AvailabilityBadge } from "@/components/products/AvailabilityBadge";
-import { panelMetrics, panelOrders, panelStallSlug } from "@/data/dashboard";
-import { getStallBySlug, getMarketById } from "@/data/markets";
-import { getProductsByStall } from "@/data/products";
+import { panelMetrics, panelOrders, panelStallSlug } from "@/lib/data/dashboard";
+import { getStallBySlug, getMarketById } from "@/lib/data/markets";
+import { getProductsByStall } from "@/lib/data/products";
 import { formatPrice, unitLabels } from "@/lib/format";
 import type { PanelOrder } from "@/types/order";
 

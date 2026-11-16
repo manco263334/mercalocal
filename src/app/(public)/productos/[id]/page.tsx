@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { products, getProductById, getProductsByStall } from "@/data/products";
-import { getStallBySlug, getMarketById } from "@/data/markets";
+import { products, getProductById, getProductsByStall } from "@/lib/data/products";
+import { getStallBySlug, getMarketById } from "@/lib/data/markets";
 import { Illustration } from "@/components/ui/Illustration";
 import { Button } from "@/components/ui/Button";
 import { Icon } from "@/components/ui/Icon";

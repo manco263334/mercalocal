@@ -1,7 +1,9 @@
-import Link from "next/link";
+"use client";
+
 import type { ReactNode } from "react";
 import type { IconName } from "@/types/navigation";
 import { Icon } from "./Icon";
+import Link from "next/link";
 
 interface ButtonProps {
   children?: ReactNode;
@@ -12,6 +14,7 @@ interface ButtonProps {
   fullWidth?: boolean;
   disabled?: boolean;
   ariaLabel?: string;
+  onClick?: () => any;
 }
 
 export function Button({
@@ -23,6 +26,7 @@ export function Button({
   fullWidth,
   disabled,
   ariaLabel,
+  onClick
 }: ButtonProps) {
   const className = `btn btn--${variant} btn--${size}${fullWidth ? " btn--block" : ""}${children ? "" : " btn--icon"}`;
   const content = (
@@ -41,7 +45,13 @@ export function Button({
   }
 
   return (
-    <button type="button" className={className} disabled={disabled} aria-label={ariaLabel}>
+    <button 
+      type="button" 
+      className={className} 
+      disabled={disabled} 
+      aria-label={ariaLabel}
+      onClick={() => onClick?.()}
+    >
       {content}
     </button>
   );

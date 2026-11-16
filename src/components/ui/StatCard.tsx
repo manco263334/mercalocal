@@ -1,4 +1,4 @@
-import type { Metric } from "@/data/dashboard";
+import type { Metric } from "@/lib/data/dashboard";
 import { Icon } from "./Icon";
 
 export function StatCard({ metric }: { metric: Metric }) {

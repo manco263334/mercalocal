@@ -14,5 +14,5 @@ export interface Product {
   price: number;
   unit: SaleUnit;
   availability: Availability;
-  description: string;
+  description?: string;
 }

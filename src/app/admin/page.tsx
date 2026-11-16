@@ -7,8 +7,8 @@ import { DataTable, type Column } from "@/components/ui/DataTable";
 import { SectionTitle } from "@/components/ui/SectionTitle";
 import { Badge, type BadgeTone } from "@/components/ui/Badge";
 import { Icon } from "@/components/ui/Icon";
-import { adminMetrics, adminStallRows, marketActivity, recentActivity, type AdminStallRow } from "@/data/dashboard";
-import { markets, getStallBySlug, getMarketById } from "@/data/markets";
+import { adminMetrics, adminStallRows, marketActivity, recentActivity, type AdminStallRow } from "@/lib/data/dashboard";
+import { markets, getStallBySlug, getMarketById } from "@/lib/data/markets";
 import type { Market, StallStatus } from "@/types/market";
 
 export const metadata: Metadata = { title: "Administración" };

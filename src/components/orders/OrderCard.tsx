@@ -1,6 +1,6 @@
 import type { Order } from "@/types/order";
-import { getStallBySlug } from "@/data/markets";
-import { getProductById } from "@/data/products";
+import { getStallBySlug } from "@/lib/data/markets";
+import { getProductById } from "@/lib/data/products";
 import { formatPrice } from "@/lib/format";
 import { Icon } from "@/components/ui/Icon";
 import { OrderStatusBadge, orderStatusConfig } from "./OrderStatusBadge";
