@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { useState } from "react";
 import { handleLogin } from "./actions/handleLogin";
 import Link from "next/link";
+import Swal from "sweetalert2";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -39,12 +40,19 @@ export default function LoginPage() {
           <Button 
             size="lg" 
             fullWidth
-            onClick={() => {
+            onClick={async () => {
               const data = new FormData();
               data.append("email", email);
               data.append("password", password);
 
-              handleLogin(data);
+              const result = await handleLogin(data);
+
+              if (result?.error) {
+                Swal.fire({
+                  text: result.error,
+                  icon: "error",
+                });
+              }
             }}
           >
             Ingresar

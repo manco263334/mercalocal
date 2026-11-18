@@ -1,7 +1,9 @@
-import { createClient } from "@/utils/supabase/supabase.client";
+import { createClient } from "@/utils/supabase/supabase.server";
+import { cookies } from "next/headers";
 
 export async function signUp(data: FormData) {
-    const supabase = createClient();
+    const cookieStore = await cookies();
+    const supabase = createClient(cookieStore);
 
     const name = data.get("name") as string;
     const username = data.get("username") as string;

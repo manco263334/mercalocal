@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/Button";
 import { useState } from "react";
 import { handleSignUp } from "./actions/handleSingUp";
 import Link from "next/link";
+import Swal from "sweetalert2";
 
 export default function RegisterPage() {
   const [name, setName] = useState("");
@@ -76,7 +77,7 @@ export default function RegisterPage() {
           <Button 
             size="lg" 
             fullWidth
-            onClick={() => {
+            onClick={async () => {
               const data = new FormData();
               data.append("name", name);
               data.append("username", username);
@@ -85,7 +86,13 @@ export default function RegisterPage() {
               data.append("confirmPassword", confirmPassword);
               data.append("role", role);
 
-              handleSignUp(data);
+              const result = await handleSignUp(data);
+              if (result?.error) {
+                Swal.fire({
+                  text: "Ocurrió un error al crear su cuenta, intente nuevamente",
+                  icon: "error"
+                });
+              }
             }}
           >
             Crear cuenta
