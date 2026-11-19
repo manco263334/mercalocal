@@ -1,6 +1,6 @@
 "use client";
 
-import type { ReactNode } from "react";
+import type { ReactNode, ChangeEventHandler } from "react";
 import type { IconName } from "@/types/navigation";
 import { Icon } from "./Icon";
 
@@ -16,7 +16,7 @@ interface InputProps extends FieldProps {
   placeholder?: string;
   defaultValue?: string;
   icon?: IconName;
-  onChange?: (e: any) => any;
+  onChange?: ChangeEventHandler<HTMLInputElement, HTMLInputElement>;
 }
 
 export function Input({ id, label, hint, hideLabel, type = "text", placeholder, defaultValue, icon, onChange }: InputProps) {

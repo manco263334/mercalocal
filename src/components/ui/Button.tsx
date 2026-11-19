@@ -1,6 +1,6 @@
 "use client";
 
-import type { ReactNode } from "react";
+import type { ReactNode, MouseEventHandler } from "react";
 import type { IconName } from "@/types/navigation";
 import { Icon } from "./Icon";
 import Link from "next/link";
@@ -14,7 +14,7 @@ interface ButtonProps {
   fullWidth?: boolean;
   disabled?: boolean;
   ariaLabel?: string;
-  onClick?: () => any;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
 export function Button({
@@ -50,7 +50,7 @@ export function Button({
       className={className} 
       disabled={disabled} 
       aria-label={ariaLabel}
-      onClick={() => onClick?.()}
+      onClick={onClick}
     >
       {content}
     </button>
